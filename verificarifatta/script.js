@@ -65,6 +65,7 @@ document.getElementById("info3").addEventListener("click", function() {
     }
 });
 
+// Funzione per fermare l'audio
 function stopAudio() {
     if (audioCorrente !== null) {
         audioCorrente.pause();
@@ -72,26 +73,76 @@ function stopAudio() {
     }
 }
 
+// Funzione di riproduzione per la canzone 1
+function riproduci1() {
+    stopAudio(); // Ferma qualsiasi audio in corso
+    audioCorrente = new Audio(canzone1.Audio); // Crea un nuovo oggetto audio
+    audioCorrente.play(); // Avvia la riproduzione
+    document.getElementById("play1").innerText = "Pause"; // Cambia il testo del pulsante a "Pause"
+}
+
+// Funzione di riproduzione per la canzone 2
+function riproduci2() {
+    stopAudio(); // Ferma qualsiasi audio in corso
+    audioCorrente = new Audio(canzone2.Audio); // Crea un nuovo oggetto audio
+    audioCorrente.play(); // Avvia la riproduzione
+    document.getElementById("play2").innerText = "Pause"; // Cambia il testo del pulsante a "Pause"
+}
+
+// Funzione di riproduzione per la canzone 3
+function riproduci3() {
+    stopAudio(); // Ferma qualsiasi audio in corso
+    audioCorrente = new Audio(canzone3.Audio); // Crea un nuovo oggetto audio
+    audioCorrente.play(); // Avvia la riproduzione
+    document.getElementById("play3").innerText = "Pause"; // Cambia il testo del pulsante a "Pause"
+}
+
+
+// Funzione di riproduzione per la canzone 1
 document.getElementById("play1").addEventListener("click", function() {
-    stopAudio();
-    audioCorrente = new Audio(canzone1.Audio);
-    audioCorrente.play();
-
+    if (audioCorrente && !audioCorrente.paused) {
+        // Se l'audio è in riproduzione, lo mettiamo in pausa
+        audioCorrente.pause();
+        document.getElementById("play1").innerText = "Play";
+    } else {
+        // Altrimenti, iniziamo la riproduzione
+        stopAudio();
+        audioCorrente = new Audio(canzone1.Audio);
+        audioCorrente.play();
+        document.getElementById("play1").innerText = "Pause";
+    }
 });
 
+// Funzione di riproduzione per la canzone 2
 document.getElementById("play2").addEventListener("click", function() {
-    stopAudio();
-    audioCorrente = new Audio(canzone2.Audio);
-    audioCorrente.play();
-
+    if (audioCorrente && !audioCorrente.paused) {
+        // Se l'audio è in riproduzione, lo mettiamo in pausa
+        audioCorrente.pause();
+        document.getElementById("play2").innerText = "Play";
+    } else {
+        // Altrimenti, iniziamo la riproduzione
+        stopAudio();
+        audioCorrente = new Audio(canzone2.Audio);
+        audioCorrente.play();
+        document.getElementById("play2").innerText = "Pause";
+    }
 });
 
+// Funzione di riproduzione per la canzone 3
 document.getElementById("play3").addEventListener("click", function() {
-    stopAudio();
-    audioCorrente = new Audio(canzone3.Audio);
-    audioCorrente.play();
-
+    if (audioCorrente && !audioCorrente.paused) {
+        // Se l'audio è in riproduzione, lo mettiamo in pausa
+        audioCorrente.pause();
+        document.getElementById("play3").innerText = "Play";
+    } else {
+        // Altrimenti, iniziamo la riproduzione
+        stopAudio();
+        audioCorrente = new Audio(canzone3.Audio);
+        audioCorrente.play();
+        document.getElementById("play3").innerText = "Pause";
+    }
 });
+
 
 
 
